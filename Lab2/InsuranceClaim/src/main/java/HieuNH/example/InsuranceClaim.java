@@ -1,6 +1,5 @@
 package HieuNH.example;
 
-import static jdk.javadoc.internal.doclets.toolkit.util.DocPath.empty;
 
 public class InsuranceClaim {
     private final String claimId;
@@ -8,8 +7,7 @@ public class InsuranceClaim {
     private String claimStatus;
     public InsuranceClaim(String id, double claimAmount) {
         if (id == null || id.isEmpty()) {
-            throw new IllegalArgumentException("Claim ID cannot be null or
-                    empty");
+            throw new IllegalArgumentException("Claim ID cannot be null or empty");
         }
         if (claimAmount <= 0) {
             throw new IllegalArgumentException("Amount must be positive");
