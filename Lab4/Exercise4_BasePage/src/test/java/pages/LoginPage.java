@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+import utils.ConfigReader;
 public class LoginPage extends BasePage {
 
     public LoginPage(WebDriver driver) {
@@ -16,7 +16,8 @@ public class LoginPage extends BasePage {
     private final By errorMsg      = By.cssSelector(".flash.error");
 
     public void navigate() {
-        navigateTo("https://the-internet.herokuapp.com/login");
+        navigateTo(ConfigReader.get(
+                "baseUrl", "https://the-internet.herokuapp.com") + "/login");
     }
 
     public void login(String username, String password) {
